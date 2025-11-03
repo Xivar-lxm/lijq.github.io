@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 - 健康饮水助手</title>
+    <style>
+        body {
+            min-width: 640px;
+            height: 1030px;
+            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+        }
+        
+        .container {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .settings-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+        
+        .slider {
+            width: 60%;
+            height: 5px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider-round {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider-round:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider-round {
+            background-color: #00cec9;
+        }
+        
+        input:checked + .slider-round:before {
+            transform: translateX(26px);
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: auto;
+        }
+        
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚙️ 设置</h1>
+            <p>个性化您的饮水计划</p >
+        </div>
+        
+        <div class="settings-section">
+            <h3>💧 饮水目标</h3>
+            <div class="setting-item">
+                <span>每日目标</span>
+                <span>2000 ml</span>
+            </div>
+            <div class="setting-item">
+                <span>自定义杯量1</span>
+                <span>200 ml</span>
+            </div>
+            <div class="setting-item">
+                <span>自定义杯量2</span>
+                <span>300 ml</span>
+            </div>
+            <div class="setting-item">
+                <span>自定义杯量3</span>
+                <span>500 ml</span>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>⏰ 提醒设置</h3>
+            <div class="setting-item">
+                <span>开启提醒</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider-round"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>提醒间隔</span>
+                <span>60 分钟</span>
+            </div>
+            <div class="setting-item">
+                <span>开始时间</span>
+                <span>08:00</span>
+            </div>
+            <div class="setting-item">
+                <span>结束时间</span>
+                <span>22:00</span>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>🎨 个性化</h3>
+            <div class="setting-item">
+                <span>主题颜色</span>
+                <span>蓝色</span>
+            </div>
+            <div class="setting-item">
+                <span>音效提醒</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider-round"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>振动提醒</span>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider-round"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="footer-nav">
+            <a href=" " class="nav-item">🏠 首页</a >
+            <a href="history.html" class="nav-item">📊 记录</a >
+            <a href="settings.html" class="nav-item">⚙️ 设置</a >
+        </div>
+    </div>
+</body>
+</html>
